@@ -1,3 +1,6 @@
 # basic-particle
 memes
-link to raw git https://rawgit.com/doggish/basic-particle/master/index.html
+
+
+
+git hub pages  https://doggish.github.io/basic-particle/
