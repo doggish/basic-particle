@@ -1,3 +1,13 @@
+<html>
+<head>
+
+
+<title>Ajax Post Web Page Particle.io Photon </title>
+
+<font style="font-size:30px">
+
+
+
 <script type="text/javascript">
 <!--
 var loadingmessage = 'Processing...';
@@ -101,6 +111,14 @@ function sendToSpark(myIn){
 
 //--></script>
 
+
+
+
+
+
+
+</head>
+
 <body onload="{
    myStorage1 = localStorage.getItem('myStoredText1')
    if(myStorage1  != null){     
@@ -113,15 +131,105 @@ function sendToSpark(myIn){
           
 }">
 
+  
+
+
+
+
+
+
+
+<h2 align=center>Simplist Ajax Web Page for the Particle.io Photon<br> (formerly the Spark.io Core) </h2>
+
+
+
+Device ID:<input id="myDeviceId" name="myCoreID" type=password size=50 placeholder="78dd12345678123456"> <br>
+Get this from the core area when logged in<br>
+
+<input id="myFunctionName" name="myFunction"  type=hidden size=50 value="my-main" > 
+
+<form name="myForm" method="POST" id="myCoolForm" ><br>
+
+<input id="myParameter" name="params" type=text  style="display:none"     size=50 placeholder="d7-send-high"> 
+
+Access Token:<input id="myToken" name="access_token" type=password size=50 placeholder="5622ce6bba702ef6bd3456d5ed26aaa4a28d7c9"> <br>
+Get this from the settings area when logged into <a href="http://particle.io/build">http://particle.io/build</a><br><br>
+
+
+
+
+</form>
+
+
+
+<input type="button" value="Store the Photon's Token and ID locally!" onClick="{
+   localStorage.setItem('myStoredText1', document.all.myToken.value)   
+   localStorage.setItem('myStoredText2', document.all.myDeviceId.value)
+   alert( document.all.myToken.value + ' ' +document.all.myDeviceId.value + ' \nHas been stored')
+}">
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
 <input type="button" value="d0-send-0" onClick="{
-    sendToSpark('d7-send-0')
+    sendToSpark('d0-send-0')
 }">
 
-  <input type="button" value="d0-send-1" onClick="{
-    sendToSpark('d7-send-1')
+   
+   <input type="button" value="d0-send-1" onClick="{
+    sendToSpark('d0-send-1')
 }">
-
-
-<input type="button" value="a0-read" onClick="{
+   
+   
+   <input type="button" value="a0-read" onClick="{
     sendToSpark('a0-read')
 }">
+    
+Note: PWM only on A4, A5 presently<br>
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+<div width="400" height="200" name="myDivName" id="myDivId"> output here </div><br>
+
+
+
+<input type=button id="myToVolts" value="Convert Sensor reading into Volts" onclick="{
+  var myTemp = parseFloat(getElementById('myDivId').innerHTML)
+  document.all.myCalc1.value = (myTemp * 3.3 / 4095).toFixed(2);
+}">
+: <input type=text id="myCalc1" value=0 size=5>Volts <br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+</font>
+</body>
+</html>
