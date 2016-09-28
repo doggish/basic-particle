@@ -100,6 +100,19 @@ function sendToSpark(myIn){
 
 
 //--></script>
+
+<body onload="{
+   myStorage1 = localStorage.getItem('myStoredText1')
+   if(myStorage1  != null){     
+      document.getElementById('myToken').value = myStorage1 
+    }   
+    myStorage2 = localStorage.getItem('myStoredText2')
+    if(myStorage2  != null){
+       document.getElementById('myDeviceId').value = myStorage2      
+    }
+          
+}">
+
 <input type="button" value="d0-send-0" onClick="{
     sendToSpark('d7-send-0')
 }">
